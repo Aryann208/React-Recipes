@@ -56,6 +56,9 @@ const DetailWrapper = styled.div`
   margin-top: 10rem;
   margin-bottom: 2rem;
   display: flex;
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 
   .active {
     background: linear-gradient(35deg, #494949, #313131);
@@ -80,10 +83,16 @@ const Button = styled.button`
   background: white;
   margin-right: 2rem;
   font-weight: 600;
+  @media only screen and (max-width: 600px) {
+  }
 `;
 const Info = styled.div`
   margin-left: 10rem;
   text-align: left;
+  @media only screen and (max-width: 600px) {
+    margin-left: 0rem;
+    margin-top: 10rem;
+  }
 `;
 
 export default Recipe;

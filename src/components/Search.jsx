@@ -28,6 +28,9 @@ const FormStyle = styled.form`
     position: relative;
     width: 100%;
   }
+  @media only screen and (max-width: 600px) {
+    margin: 0;
+  }
   input {
     border: none;
     background: linear-gradient(35deg, #494949, #313131);

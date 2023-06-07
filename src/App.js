@@ -11,8 +11,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Nav>
-          <GiKnifeFork />
-          <Logo to={'/'}>Delicious</Logo>
+          <Logo to={'/'}>
+            <GiKnifeFork />
+            Delicious
+          </Logo>
         </Nav>
         <Search />
         <Category />
@@ -27,6 +29,10 @@ const Logo = styled(Link)`
   font-size: 1.5rem;
   font-weight: 400;
   font-family: 'Lobster Two', cursive;
+  @media only screen and (max-width: 600px) {
+    margin: auto;
+    font-size: 2.5rem;
+  }
 `;
 
 const Nav = styled.div`

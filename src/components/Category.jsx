@@ -29,6 +29,11 @@ const List = styled.div`
   display: flex;
   justify-content: center;
   margin: 2rem 0rem;
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+  }
 `;
 
 const SLink = styled(NavLink)`
@@ -36,7 +41,7 @@ const SLink = styled(NavLink)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 100%;
   margin-right: 2rem;
   text-decoration: none;
   background: linear-gradient(35deg, #494949, #313131);
@@ -44,7 +49,13 @@ const SLink = styled(NavLink)`
   height: 6rem;
   cursor: pointer;
   transform: scale(0.8);
-
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 4rem;
+    border-radius: 10px;
+  }
   h4 {
     color: white;
     font-size: 0.8rem;
