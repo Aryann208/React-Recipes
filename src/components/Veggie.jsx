@@ -21,13 +21,39 @@ const Veggie = () => {
       setVeggie(data.recipes);
     }
   };
+  const [perPage, setPerPage] = useState(3);
+  useEffect(() => {
+    getPopular();
+  }, []);
+  const [screenSize, setScreenSize] = useState(getCurrentDimension());
+
+  function getCurrentDimension() {
+    return {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
+  }
+
+  useEffect(() => {
+    const updateDimension = () => {
+      setScreenSize(getCurrentDimension());
+
+      const perPageNumber = getCurrentDimension().width > 600 ? 3 : 1;
+      setPerPage(perPageNumber);
+    };
+    window.addEventListener('resize', updateDimension);
+
+    return () => {
+      window.removeEventListener('resize', updateDimension);
+    };
+  }, [screenSize, perPage]);
   return (
     <div>
       <Wrapper>
         <h3>Our Vegetarian Picks</h3>
         <Splide
           options={{
-            perPage: 3,
+            perPage: `${perPage}`,
             arrows: false,
             pagination: false,
             drag: 'free',

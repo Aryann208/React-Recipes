@@ -3,11 +3,36 @@ import styled from 'styled-components';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 import { Link } from 'react-router-dom';
+
 const Popular = () => {
   const [popular, setPopular] = useState([]);
+  const [perPage, setPerPage] = useState(4);
   useEffect(() => {
     getPopular();
   }, []);
+  const [screenSize, setScreenSize] = useState(getCurrentDimension());
+
+  function getCurrentDimension() {
+    return {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
+  }
+
+  useEffect(() => {
+    const updateDimension = () => {
+      setScreenSize(getCurrentDimension());
+
+      const perPageNumber = getCurrentDimension().width > 600 ? 4 : 2;
+      setPerPage(perPageNumber);
+    };
+    window.addEventListener('resize', updateDimension);
+
+    return () => {
+      window.removeEventListener('resize', updateDimension);
+    };
+  }, [screenSize]);
+
   const getPopular = async () => {
     const check = localStorage.getItem('popular');
     if (check) {
@@ -27,7 +52,7 @@ const Popular = () => {
         <h3>Popular Picks</h3>
         <Splide
           options={{
-            perPage: 4,
+            perPage: `${perPage}`,
             arrows: false,
             pagination: false,
             drag: 'free',
