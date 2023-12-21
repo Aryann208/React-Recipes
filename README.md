@@ -2,7 +2,7 @@
 
 Delicious is a React.js application that leverages the [Spoonacular API](https://spoonacular.com/) to provide users with a delightful experience of exploring and cooking various recipes. The app includes detailed instructions, ingredient information, and the nationality of each dish.
 
-[![Watch the video]](https://youtu.be/PPJx2iX0Y2I)
+[![Watch the video](https://i9.ytimg.com/vi/PPJx2iX0Y2I/mqdefault.jpg?sqp=CJCTkawG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGMgYyhjMA8=&rs=AOn4CLAHY69dnGO55FUsyWhe-cHhuTa_dA)](https://youtu.be/PPJx2iX0Y2I)
 
 
 ## Features
